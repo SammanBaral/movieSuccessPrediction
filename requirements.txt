@@ -8,3 +8,7 @@ xgboost
 streamlit
 transformers
 torch
+plotly
+joblib
+certifi
+urllib3
