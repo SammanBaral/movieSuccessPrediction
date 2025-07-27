@@ -1,0 +1,332 @@
+[
+    {
+        "text": "This movie is a must-watch! Absolutely loved it. #Epic #MustWatch",
+        "hashtags": [
+            "#Epic",
+            "#MustWatch"
+        ],
+        "likes": 1200,
+        "shares": 300,
+        "comments": 150,
+        "label": "Hit"
+    },
+    {
+        "text": "Absolutely thrilling experience! The cast was phenomenal. #Thrilling #MustWatch",
+        "hashtags": [
+            "#Thrilling",
+            "#MustWatch"
+        ],
+        "likes": 900,
+        "shares": 200,
+        "comments": 100,
+        "label": "Hit"
+    },
+    {
+        "text": "Blockbuster! Can't wait to watch it again. #Blockbuster #Hit",
+        "hashtags": [
+            "#Blockbuster",
+            "#Hit"
+        ],
+        "likes": 1500,
+        "shares": 400,
+        "comments": 200,
+        "label": "Hit"
+    },
+    {
+        "text": "Loved every moment, a cinematic masterpiece. #Masterpiece #Hit",
+        "hashtags": [
+            "#Masterpiece",
+            "#Hit"
+        ],
+        "likes": 1100,
+        "shares": 250,
+        "comments": 120,
+        "label": "Hit"
+    },
+    {
+        "text": "Incredible visuals and story. #Visuals #Hit",
+        "hashtags": [
+            "#Visuals",
+            "#Hit"
+        ],
+        "likes": 1300,
+        "shares": 350,
+        "comments": 180,
+        "label": "Hit"
+    },
+    {
+        "text": "A must-see for everyone! #MustSee #Hit",
+        "hashtags": [
+            "#MustSee",
+            "#Hit"
+        ],
+        "likes": 1250,
+        "shares": 320,
+        "comments": 160,
+        "label": "Hit"
+    },
+    {
+        "text": "Best movie of the year! #BestMovie #Hit",
+        "hashtags": [
+            "#BestMovie",
+            "#Hit"
+        ],
+        "likes": 1400,
+        "shares": 370,
+        "comments": 190,
+        "label": "Hit"
+    },
+    {
+        "text": "Fantastic performances and direction. #Fantastic #Hit",
+        "hashtags": [
+            "#Fantastic",
+            "#Hit"
+        ],
+        "likes": 1000,
+        "shares": 210,
+        "comments": 110,
+        "label": "Hit"
+    },
+    {
+        "text": "Unforgettable experience! #Unforgettable #Hit",
+        "hashtags": [
+            "#Unforgettable",
+            "#Hit"
+        ],
+        "likes": 1350,
+        "shares": 340,
+        "comments": 170,
+        "label": "Hit"
+    },
+    {
+        "text": "A true masterpiece, will watch again. #Masterpiece #Hit",
+        "hashtags": [
+            "#Masterpiece",
+            "#Hit"
+        ],
+        "likes": 1450,
+        "shares": 390,
+        "comments": 210,
+        "label": "Hit"
+    },
+    {
+        "text": "It was okay, some good moments but not memorable. #Average #MovieNight",
+        "hashtags": [
+            "#Average",
+            "#MovieNight"
+        ],
+        "likes": 300,
+        "shares": 40,
+        "comments": 30,
+        "label": "Average"
+    },
+    {
+        "text": "Good for a one-time watch. #Decent #MovieNight",
+        "hashtags": [
+            "#Decent",
+            "#MovieNight"
+        ],
+        "likes": 400,
+        "shares": 60,
+        "comments": 25,
+        "label": "Average"
+    },
+    {
+        "text": "Not bad, but not great either. #Average #Okay",
+        "hashtags": [
+            "#Average",
+            "#Okay"
+        ],
+        "likes": 350,
+        "shares": 50,
+        "comments": 28,
+        "label": "Average"
+    },
+    {
+        "text": "Some fun scenes, but overall just average. #Average #Fun",
+        "hashtags": [
+            "#Average",
+            "#Fun"
+        ],
+        "likes": 320,
+        "shares": 45,
+        "comments": 22,
+        "label": "Average"
+    },
+    {
+        "text": "Mediocre plot but decent acting. #Mediocre #Average",
+        "hashtags": [
+            "#Mediocre",
+            "#Average"
+        ],
+        "likes": 310,
+        "shares": 42,
+        "comments": 20,
+        "label": "Average"
+    },
+    {
+        "text": "Enjoyable but forgettable. #Enjoyable #Average",
+        "hashtags": [
+            "#Enjoyable",
+            "#Average"
+        ],
+        "likes": 330,
+        "shares": 48,
+        "comments": 24,
+        "label": "Average"
+    },
+    {
+        "text": "Average movie, nothing special. #Average #NothingSpecial",
+        "hashtags": [
+            "#Average",
+            "#NothingSpecial"
+        ],
+        "likes": 340,
+        "shares": 52,
+        "comments": 26,
+        "label": "Average"
+    },
+    {
+        "text": "Had some laughs, but not a must-watch. #Average #Laughs",
+        "hashtags": [
+            "#Average",
+            "#Laughs"
+        ],
+        "likes": 360,
+        "shares": 55,
+        "comments": 27,
+        "label": "Average"
+    },
+    {
+        "text": "Decent time pass. #Decent #Average",
+        "hashtags": [
+            "#Decent",
+            "#Average"
+        ],
+        "likes": 370,
+        "shares": 58,
+        "comments": 29,
+        "label": "Average"
+    },
+    {
+        "text": "Could have been better. #Average #CouldBeBetter",
+        "hashtags": [
+            "#Average",
+            "#CouldBeBetter"
+        ],
+        "likes": 380,
+        "shares": 60,
+        "comments": 31,
+        "label": "Average"
+    },
+    {
+        "text": "Not impressed, the plot was weak. #Disappointed #FlopAlert",
+        "hashtags": [
+            "#Disappointed",
+            "#FlopAlert"
+        ],
+        "likes": 50,
+        "shares": 5,
+        "comments": 10,
+        "label": "Flop"
+    },
+    {
+        "text": "Boring and too long. Would not recommend. #Boring #WasteOfTime",
+        "hashtags": [
+            "#Boring",
+            "#WasteOfTime"
+        ],
+        "likes": 30,
+        "shares": 2,
+        "comments": 5,
+        "label": "Flop"
+    },
+    {
+        "text": "Terrible movie, waste of money. #Terrible #Flop",
+        "hashtags": [
+            "#Terrible",
+            "#Flop"
+        ],
+        "likes": 20,
+        "shares": 1,
+        "comments": 3,
+        "label": "Flop"
+    },
+    {
+        "text": "Worst movie I've seen this year. #Worst #Flop",
+        "hashtags": [
+            "#Worst",
+            "#Flop"
+        ],
+        "likes": 15,
+        "shares": 1,
+        "comments": 2,
+        "label": "Flop"
+    },
+    {
+        "text": "Disappointing and dull. #Disappointing #Flop",
+        "hashtags": [
+            "#Disappointing",
+            "#Flop"
+        ],
+        "likes": 25,
+        "shares": 2,
+        "comments": 4,
+        "label": "Flop"
+    },
+    {
+        "text": "Plot holes everywhere. #PlotHoles #Flop",
+        "hashtags": [
+            "#PlotHoles",
+            "#Flop"
+        ],
+        "likes": 18,
+        "shares": 1,
+        "comments": 2,
+        "label": "Flop"
+    },
+    {
+        "text": "Bad acting and direction. #BadActing #Flop",
+        "hashtags": [
+            "#BadActing",
+            "#Flop"
+        ],
+        "likes": 22,
+        "shares": 1,
+        "comments": 3,
+        "label": "Flop"
+    },
+    {
+        "text": "Not worth the hype. #Overhyped #Flop",
+        "hashtags": [
+            "#Overhyped",
+            "#Flop"
+        ],
+        "likes": 28,
+        "shares": 2,
+        "comments": 4,
+        "label": "Flop"
+    },
+    {
+        "text": "Fell asleep halfway. #Sleepy #Flop",
+        "hashtags": [
+            "#Sleepy",
+            "#Flop"
+        ],
+        "likes": 12,
+        "shares": 1,
+        "comments": 1,
+        "label": "Flop"
+    },
+    {
+        "text": "Regret watching it. #Regret #Flop",
+        "hashtags": [
+            "#Regret",
+            "#Flop"
+        ],
+        "likes": 10,
+        "shares": 1,
+        "comments": 1,
+        "label": "Flop"
+    }
+]
