@@ -1,0 +1,24 @@
+{
+  "movie_name": "Oppenheimer",
+  "prediction": "Average",
+  "confidence": 78.5,
+  "prediction_score": 0.645,
+  "social_data": {
+    "total_mentions": 150,
+    "sentiment_score": 0.227,
+    "positive_ratio": 0.493,
+    "negative_ratio": 0.113,
+    "engagement_rate": 0.437,
+    "viral_potential": 0.1,
+    "mention_velocity": 6.2
+  },
+  "key_factors": [
+    "Sentiment Score: 0.227",
+    "Positive Mentions: 49.3%",
+    "Engagement Rate: 0.4",
+    "Viral Potential: 10.0%",
+    "Mention Velocity: 6.2/hour"
+  ],
+  "timestamp": "2025-08-11T19:11:55.266162",
+  "data_freshness": "Real-time (last 7 days)"
+}

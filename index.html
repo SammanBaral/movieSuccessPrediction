@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Success Prediction Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1><i class="fas fa-film"></i> Movie Success Prediction Dashboard</h1>
+                <p>Advanced Analytics for Pre-Release Movie Success Prediction</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="dashboard-nav">
+            <div class="nav-content">
+                <button class="nav-btn active" data-section="overview">
+                    <i class="fas fa-chart-line"></i> Overview
+                </button>
+                <button class="nav-btn" data-section="timeline">
+                    <i class="fas fa-clock"></i> Timeline Analysis
+                </button>
+                <button class="nav-btn" data-section="comparison">
+                    <i class="fas fa-balance-scale"></i> Movie Comparison
+                </button>
+                <button class="nav-btn" data-section="real-data">
+                    <i class="fas fa-database"></i> Real Data
+                </button>
+                <button class="nav-btn" data-section="prediction">
+                    <i class="fas fa-crystal-ball"></i> Prediction
+                </button>
+                <button class="nav-btn" data-section="insights">
+                    <i class="fas fa-lightbulb"></i> Insights
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 id="total-movies">-</h3>
+                            <p>Total Movies</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 id="total-datapoints">-</h3>
+                            <p>Data Points</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 id="hit-rate">-</h3>
+                            <p>Hit Rate</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 id="avg-engagement">-</h3>
+                            <p>Avg Engagement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Success Distribution</h3>
+                        <div id="success-pie-chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Engagement by Success Category</h3>
+                        <div id="engagement-bar-chart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline Analysis Section -->
+            <section id="timeline" class="section">
+                <div class="filters-panel">
+                    <h3>Filters</h3>
+                    <div class="filter-group">
+                        <label>Success Categories:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="Hit" checked> Hit</label>
+                            <label><input type="checkbox" value="Average" checked> Average</label>
+                            <label><input type="checkbox" value="Flop" checked> Flop</label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Time Range (Days Before Release):</label>
+                        <input type="range" id="time-range" min="1" max="365" value="365">
+                        <span id="time-range-value">365 days</span>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-container full-width">
+                        <h3>Pre-Release Buzz Timeline</h3>
+                        <div id="timeline-chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Buzz Type Distribution</h3>
+                        <div id="buzz-type-chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Engagement Evolution</h3>
+                        <div id="engagement-timeline-chart"></div>
+                    </div>
+                    <div class="chart-container full-width">
+                        <h3>Cumulative Buzz Over Time</h3>
+                        <div id="cumulative-buzz-chart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Movie Comparison Section -->
+            <section id="comparison" class="section">
+                <div class="comparison-controls">
+                    <h3>Select Movies to Compare</h3>
+                    <div id="movie-selector">
+                        <!-- Movie checkboxes will be populated here -->
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Total Buzz Comparison</h3>
+                        <div id="movie-buzz-chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Engagement Rate Comparison</h3>
+                        <div id="movie-engagement-chart"></div>
+                    </div>
+                    <div class="chart-container full-width">
+                        <h3>Detailed Timeline Comparison</h3>
+                        <div id="movie-timeline-comparison"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real Data Section -->
+            <section id="real-data" class="section">
+                <div class="real-data-container">
+                    <h3>📊 Real Movie Data Analysis</h3>
+
+                    <div class="real-data-grid">
+                        <div class="chart-container">
+                            <h4>Budget vs Revenue Analysis</h4>
+                            <div id="budget-revenue-chart"></div>
+                        </div>
+
+                        <div class="chart-container">
+                            <h4>Rating vs Box Office Performance</h4>
+                            <div id="rating-revenue-chart"></div>
+                        </div>
+
+                        <div class="chart-container full-width">
+                            <h4>Real Movie Performance Table</h4>
+                            <div id="movie-performance-table"></div>
+                        </div>
+
+                        <div class="chart-container">
+                            <h4>Genre Performance</h4>
+                            <div id="genre-performance-chart"></div>
+                        </div>
+
+                        <div class="chart-container">
+                            <h4>Success Rate by Budget Range</h4>
+                            <div id="budget-success-chart"></div>
+                        </div>
+                        <div class="chart-container full-width">
+                            <h4>Top 10 Movies by Revenue</h4>
+                            <div id="top-revenue-chart"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h4>ROI Distribution</h4>
+                            <div id="roi-histogram-chart"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h4>Genre vs Success Heatmap</h4>
+                            <div id="genre-success-heatmap"></div>
+                        </div>
+                        <div class="chart-container full-width">
+                            <h4>Correlation Heatmap</h4>
+                            <div id="corr-heatmap"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h4>Engagement vs Buzz (Bubble)</h4>
+                            <div id="engagement-bubble-chart"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h4>ROI vs Rating (Bubble)</h4>
+                            <div id="roi-rating-bubble"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h4>Engagement Distribution by Success</h4>
+                            <div id="engagement-violin"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h4>Genre → Success Flow</h4>
+                            <div id="genre-success-sankey"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prediction Section -->
+            <section id="prediction" class="section">
+                <div class="prediction-container">
+                    <!-- Live Social Media Prediction -->
+                    <div class="live-prediction-form">
+                        <h3>🔴 Live Social Media Prediction</h3>
+                        <p>Enter a movie name to analyze real-time social media buzz and predict success</p>
+                        <form id="live-prediction-form">
+                            <div class="form-group">
+                                <label for="live-movie-title">Movie Title:</label>
+                                <div class="input-with-button">
+                                    <input type="text" id="live-movie-title"
+                                        placeholder="e.g., Oppenheimer, Barbie, Avatar" required>
+                                    <button type="submit" class="live-predict-btn">
+                                        <i class="fas fa-satellite"></i> Analyze Live Data
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Live Results -->
+                        <div class="live-prediction-results" id="live-prediction-results" style="display: none;">
+                            <div class="live-loading" id="live-loading" style="display: none;">
+                                <div class="spinner-small"></div>
+                                <p>Fetching live social media data...</p>
+                            </div>
+
+                            <div class="live-result-content" id="live-result-content" style="display: none;">
+                                <h4>Live Prediction Results</h4>
+                                <div class="live-result-main">
+                                    <div class="live-prediction-badge" id="live-prediction-category">Hit</div>
+                                    <div class="live-confidence-score">
+                                        <span>Confidence: </span>
+                                        <span id="live-confidence-score">85%</span>
+                                    </div>
+                                    <div class="data-freshness">
+                                        <span id="live-data-timestamp">Real-time data</span>
+                                    </div>
+                                </div>
+
+                                <div class="live-social-metrics">
+                                    <h5>Social Media Metrics</h5>
+                                    <div class="metrics-row">
+                                        <div class="metric">
+                                            <span class="metric-label">Total Mentions</span>
+                                            <span class="metric-value" id="live-total-mentions">-</span>
+                                        </div>
+                                        <div class="metric">
+                                            <span class="metric-label">Sentiment Score</span>
+                                            <span class="metric-value" id="live-sentiment-score">-</span>
+                                        </div>
+                                        <div class="metric">
+                                            <span class="metric-label">Positive Ratio</span>
+                                            <span class="metric-value" id="live-positive-ratio">-</span>
+                                        </div>
+                                        <div class="metric">
+                                            <span class="metric-label">Viral Potential</span>
+                                            <span class="metric-value" id="live-viral-potential">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="live-factors">
+                                    <h5>Key Analysis Factors</h5>
+                                    <ul id="live-key-factors">
+                                        <!-- Factors will be populated here -->
+                                    </ul>
+                                </div>
+
+                                <div class="live-actions" style="margin-top: 12px; display: flex; gap: 10px;">
+                                    <button id="add-to-compare" class="live-predict-btn" type="button">
+                                        <i class="fas fa-plus"></i> Add to Live Comparison
+                                    </button>
+                                    <button id="clear-compare" class="live-predict-btn" type="button"
+                                        style="background:#7f8c8d;">
+                                        <i class="fas fa-trash"></i> Clear Comparison
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Traditional Prediction Form -->
+                    <div class="prediction-form">
+                        <h3>📊 Traditional Prediction (Manual Input)</h3>
+                        <form id="prediction-form">
+                            <div class="form-group">
+                                <label for="movie-title">Movie Title:</label>
+                                <input type="text" id="movie-title" placeholder="Enter movie title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="genre">Genre:</label>
+                                <select id="genre" required>
+                                    <option value="">Select Genre</option>
+                                    <option value="Action">Action</option>
+                                    <option value="Comedy">Comedy</option>
+                                    <option value="Drama">Drama</option>
+                                    <option value="Horror">Horror</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Sci-Fi">Sci-Fi</option>
+                                    <option value="Thriller">Thriller</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget (in millions):</label>
+                                <input type="number" id="budget" min="1" max="500" value="50" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="social-buzz">Social Media Buzz Score:</label>
+                                <input type="range" id="social-buzz" min="0" max="1" step="0.1" value="0.5">
+                                <span id="social-buzz-value">0.5</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="engagement-rate-input">Engagement Rate:</label>
+                                <input type="range" id="engagement-rate-input" min="0" max="1" step="0.01" value="0.3">
+                                <span id="engagement-rate-value">0.30</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="days-before">Days Before Release:</label>
+                                <input type="number" id="days-before" min="1" max="365" value="30" required>
+                            </div>
+                            <button type="submit" class="predict-btn">
+                                <i class="fas fa-magic"></i> Predict Success
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="prediction-results" id="prediction-results" style="display: none;">
+                        <h3>Prediction Results</h3>
+                        <div class="result-card">
+                            <div class="result-main">
+                                <h4>Predicted Success</h4>
+                                <div class="prediction-badge" id="prediction-category">Hit</div>
+                                <div class="confidence-score">
+                                    <span>Confidence: </span>
+                                    <span id="confidence-score">85%</span>
+                                </div>
+                            </div>
+                            <div class="result-factors">
+                                <h5>Key Factors</h5>
+                                <ul id="key-factors">
+                                    <!-- Factors will be populated here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Comparison & Recent Predictions -->
+                <div class="prediction-container" style="margin-top:24px;">
+                    <div class="comparison-controls">
+                        <h3>🆚 Live Comparison</h3>
+                        <p style="opacity:0.8;margin-top:4px;">Add multiple movies using the live prediction above, then
+                            explore side‑by‑side visualizations.</p>
+                        <div id="live-compare-list" class="compare-list"
+                            style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;"></div>
+                    </div>
+
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <h3>Radar: Social Signals</h3>
+                            <div id="live-radar-chart"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Confidence & Overall Score</h3>
+                            <div id="live-confidence-chart"></div>
+                        </div>
+                        <div class="chart-container full-width">
+                            <h3>Sentiment Mix</h3>
+                            <div id="live-sentiment-stacked"></div>
+                        </div>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <h3>Buzz Funnel</h3>
+                            <div id="live-funnel-chart"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Average Confidence Gauge</h3>
+                            <div id="live-gauge-chart"></div>
+                        </div>
+                        <div class="chart-container full-width">
+                            <h3>Live Comparison Table</h3>
+                            <div id="live-compare-table"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Score vs Confidence</h3>
+                            <div id="live-score-scatter"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Mentions vs Engagement</h3>
+                            <div id="live-bubble"></div>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Velocity vs Viral Potential</h3>
+                            <div id="live-velocity-viral"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prediction-container" style="margin-top:24px;">
+                    <h3>🕒 Recent Predictions</h3>
+                    <div id="recent-predictions" class="recent-predictions"
+                        style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;"></div>
+                </div>
+            </section>
+
+            <!-- Insights Section -->
+            <section id="insights" class="section">
+                <div class="insights-container">
+                    <h3>Data Insights</h3>
+                    <div class="insights-grid" id="insights-content">
+                        <!-- Insights will be populated here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading data...</p>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
